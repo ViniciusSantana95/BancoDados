@@ -3,7 +3,6 @@ create table Funcionario(
     id int NOT NULL,
     idMedidor int NOT NULL,
     registroTempo date NOT NULL,
-    constraint PRIMARY KEY(documentoLeitura),
-    constraint PRIMARY KEY(id),
-    constraint FOREIGN KEY(idMedidor) REFERENCES Medidor(id)
+    PRIMARY KEY(documentoLeitura),
+    FOREIGN KEY(idMedidor) REFERENCES Medidor(id)
 )

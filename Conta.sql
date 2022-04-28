@@ -5,5 +5,5 @@ create table Conta(
     dataElaboracao date NOT NULL,
     prazoPagamento date NOT NULL,
     intervaloDias int NOT NULL,
-    constraint FOREIGN KEY(idConsumidor) REFERENCES Consumidor(id)
+    FOREIGN KEY(idConsumidor) REFERENCES Consumidor(id)
 )

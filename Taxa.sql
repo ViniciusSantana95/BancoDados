@@ -4,7 +4,7 @@ create table Taxa(
     descricao varchar(100) NOT NULL,
     valorFixo float NOT NULL,
     valorVariavel float NOT NULL,
-    limiteConsumo double NOT NULL,
-    constraint PRIMARY KEY(id),
-    constraint FOREIGN KEY(idConsumo) REFERENCES Consumo(idConsumo)
+    limiteConsumo float NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(idConsumo) REFERENCES Consumo(idConsumo)
 )
