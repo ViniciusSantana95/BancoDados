@@ -8,9 +8,11 @@ entity Consumidor {
 }
 
 entity Endereco{
+    *id int <<pk>> not null
     *tipo varchar[11] not null
     --
     *nomeEndereco varchar[100] not null
+    *idCliente int <<fk>> not null
 }
 
 entity Medidor {
