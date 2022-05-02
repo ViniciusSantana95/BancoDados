@@ -1,5 +1,5 @@
 create table Consumo(
-    idConsumo int NOT NULL,
-    nivelConsumo float NOT NULL,
-    PRIMARY KEY(idConsumo)
+    id           int        NOT NULL,
+    nivelConsumo float      NOT NULL,
+    constraint   pk_consumo primary key (id)
 )

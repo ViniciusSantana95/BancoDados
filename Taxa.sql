@@ -5,6 +5,5 @@ create table Taxa(
     valorFixo float NOT NULL,
     valorVariavel float NOT NULL,
     limiteConsumo float NOT NULL,
-    PRIMARY KEY(id),
-    FOREIGN KEY(idConsumo) REFERENCES Consumo(idConsumo)
+    constraint pk_taxa primary key(id)
 )
