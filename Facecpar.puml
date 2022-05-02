@@ -4,7 +4,7 @@ entity Consumidor {
     *id int <<pk>> not null
     --
     *nome varchar[50] not null
-    *idEndereco int <<fk>> not null
+    *idEndereco int <<fk>> not null
 }
 
 entity Endereco{
