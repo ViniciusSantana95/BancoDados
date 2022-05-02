@@ -1,62 +1,59 @@
-@startuml 
+@startuml Facecpar
 
 entity Consumidor {
-    *id int <<pk>> not null
-    --
-    *nome varchar[50] not null
+    *id int <<pk>> not null
+    --
+    *nome varchar[50] not null
     
 }
 
 entity Endereco{
     *id int <<pk>> not null
-    *tipo varchar[11] not null
-    --
-    *nomeEndereco varchar[100] not null
-    *idCliente int <<fk>> not null
+    *tipo varchar[11] not null
+    --
+    *nomeEndereco varchar[100] not null
+    *idConsumidor int <<fk>> not null
 }
 
 entity Medidor {
-    *id int <<pk>> not null
-    --
-    *tipo varchar[30] not null
-    *modelo varchar[30] not null
-
+    *id int <<pk>> not null
+    --
+    *tipo varchar[30] not null
+    *modelo varchar[30] not null
 }
 
 entity Funcionario{
-    *documentoLeitura int <<pk>> not null
-    *id int <<pk>> not null
-    --
-    *registroTempo date not null
-    *idMedidor int <<fk>> not null
-
-}
-
-entity Taxa{
-    *id int <<pk>> not null
-    --
-    *descricao varchar[100] not null
-    *valorFixo float not null
-    *valorVariavel float not null
-    *limiteConsumo double not null
-    *idConsumo int <<fk>> not null
-
+    *documentoLeitura int <<pk>> not null
+    *id int <<pk>> not null
+    --
+    *registroTempo date not null
+    *idMedidor int <<fk>> not null
 }
 
 entity Consumo{
-    *idConsumo int <<pk>> not null
-    --
-    *nivelConsumo float not null
+    *idConsumo int <<pk>> not null
+    --
+    *nivelConsumo float not null
+    *limiteConsumo double not null
+}
+
+entity Taxa{
+    *id int <<pk>> not null
+    --
+    *descricao varchar[100] not null
+    *valorFixo float not null
+    *valorVariavel float not null
+    *idConsumo int <<fk>> not null
+
 }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 entity Conta{
-    *numeroConta int not null
-    *detalhamento varchar[100] not null
-    *idConsumidor int <<fk>> not null
-    *dataElaboracao date not null
-    *prazoPagamento date not null
-    *intervaloDias int not null
-
+    *numeroConta int not null
+    *detalhamento varchar[100] not null
+    *idConsumidor int <<fk>> not null
+    *dataElaboracao date not null
+    *prazoPagamento date not null
+    *intervaloDias int not null
 }
 
 Consumidor }|----|{Endereco
