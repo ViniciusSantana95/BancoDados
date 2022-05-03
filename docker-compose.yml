@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:10
+    environment:
+      POSTGRES_USER: "vinicius"
+      POSTGRES_PASSWORD: "vinicius123"
+      POSTGRES_DB: "data_vinicius"
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-network
+ 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "vinicius@datavinicius743.inc"
+      PGADMIN_DEFAULT_PASSWORD: "vinicius123"
+    ports:
+      - "8080:80" # Esquerda Externo:Direita Interno
+    depends_on:
+      - postgres
+    networks:
+      - pg-network
+
+networks:
+  pg-network:
+    driver: bridge            
